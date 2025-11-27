@@ -1,27 +1,40 @@
-🫁 MedGemma Chest X-Ray Playground
+# 🫁 MedGemma Chest X-Ray Playground
 
-A lightweight experimental environment for exploring MedGemma 3 as a multimodal backbone for chest X-ray understanding, alignment, and generation workflows.
+A lightweight experimental environment for exploring **MedGemma 3** as a multimodal backbone for chest X-ray understanding, alignment, and generation workflows.
 
 This project focuses on practical, hands-on experimentation with:
-	•	Hugging Face integration
-	•	Vision–language architecture inspection
-	•	Parameter-efficient fine-tuning (LoRA)
-	•	Prompt / image alignment fundamentals
-	•	Dataset preparation for downstream generation tasks
 
-  📘 Notebooks
-  (note: they are .py files here, but will work fine after downloading)
+- **Hugging Face integration**
+- **Vision–language architecture inspection**
+- **Parameter-efficient fine-tuning (LoRA)**
+- **Prompt / image alignment fundamentals**
+- **Dataset preparation for downstream generation tasks**
 
-medgemma_hf_example.py
+---
 
-A reference implementation based on Hugging Face’s official MedGemma examples.
-Includes loading the processor and model, running initial inference, and verifying the PyTorch-only setup.
+## 📘 Notebooks  
+*(Note: these are `.py` files in the repo but function like notebooks when downloaded or viewed in an editor.)*
 
-medgemma_fine_tuning_intro.py
+### **`medgemma_hf_example.py`**
 
-Introduces the core fine-tuning workflow:
-	•	Extracting the SigLIP vision tower and Gemma3 language model
-	•	Freezing the vision encoder
-	•	Injecting LoRA adapters (q_proj/v_proj) into the text decoder
-	•	Confirming trainable parameter count (~0.15% of total)
-This notebook sets up the exact architectural hooks needed for later multimodal alignment or generation conditioning.
+A reference implementation based on Hugging Face’s official MedGemma examples.  
+Demonstrates:
+
+- Loading the MedGemma processor and model  
+- Running initial inference on chest X-rays  
+- Ensuring a clean **PyTorch-only** environment (TF disabled)  
+
+---
+
+### **`medgemma_fine_tuning_intro.py`**
+
+Introduces the core fine-tuning workflow for MedGemma 3, including:
+
+- Extracting the **SigLIP vision tower** and **Gemma3 language model**  
+- Freezing the vision encoder to preserve pretrained radiographic features  
+- Injecting **LoRA adapters** (`q_proj` / `v_proj`) into the text decoder  
+- Verifying the correct trainable parameter footprint (~**0.15%** of total)  
+
+This script establishes the architectural hooks needed for downstream multimodal alignment and text-conditioned generation experiments.
+
+---
