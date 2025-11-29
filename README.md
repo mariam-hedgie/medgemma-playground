@@ -13,7 +13,7 @@ This project focuses on practical, hands-on experimentation with:
 ---
 
 ## 📘 Notebooks  
-*(Note: these are `.py` files in the repo but function like notebooks when downloaded or viewed in an editor.)*
+*(Note: these are `.py` files but work the same)*
 
 ### **`medgemma_hf_example.py`**
 
